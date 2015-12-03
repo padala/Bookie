@@ -1,0 +1,201 @@
+/* app css stylesheet */
+
+@font-face {
+    font-family: 'armataregular';
+    src: url('book/fonts/armata-regular-webfont.eot');
+    src: url('book/fonts/armata-regular-webfont.eot?#iefix') format('embedded-opentype'), url('book/fonts/armata-regular-webfont.woff2') format('woff2'), url('book/fonts/armata-regular-webfont.woff') format('woff'), url('book/fonts/armata-regular-webfont.ttf') format('truetype'), url('book/fonts/armata-regular-webfont.svg#armataregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+.menu {
+    list-style: none;
+    border-bottom: 0.1em solid black;
+    margin-bottom: 2em;
+    padding: 0 0 0.5em;
+}
+
+.menu:before {
+    content: "[";
+}
+
+.menu:after {
+    content: "]";
+}
+
+.menu > li {
+    display: inline;
+}
+
+.menu > li:before {
+    content: "|";
+    padding-right: 0.3em;
+}
+
+.menu > li:nth-child(1):before {
+    content: "";
+    padding: 0;
+}
+
+.book-section {
+    width: 100px;
+    height: 100px;
+    margin: 2% 30% auto;
+}
+
+.avatar-section {
+    width: 100px;
+    height: 100px;
+}
+
+.view1_name {
+    font-size: 1em;
+    font-family: armataregular;
+}
+
+.view1_authname {
+    font-family: armataregular;
+}
+
+.fa-clock-o:before {
+    padding: 5px;
+    color: #337AB7;
+}
+
+.fa-heart:before {
+    padding: 5px;
+    color: #337AB7;
+}
+
+.btn {
+    margin: 3%;
+}
+
+.complete_cntn {
+    background-color: #e0e0e0;
+    padding: 2%;
+    margin: 20px 0;
+}
+
+.aboutbooks_list {
+    font-family: armataregular;
+}
+
+.header_cls {
+    background: #266296;
+    /* width: 100%; */
+    padding: 0.3%;
+    text-align: center;
+    color: white;
+    font-family: sans-serif;
+    font-size: 1.5em;
+}
+
+.footer_cls {
+    background: #266296;
+    /* width: 100%; */
+    padding: 0.3%;
+    text-align: center;
+    color: white;
+    font-family: sans-serif;
+    font-size: 1.5em;
+}
+
+.name_row {
+    margin-right: -15px;
+    margin-left: -15px;
+    text-align: center;
+    color: black;
+}
+
+.child_main {
+    background: #e0e0e0;
+    margin: 20px 0;
+    padding: 2%;
+}
+
+.child_main2 {
+    background: #266296;
+    margin: 5% auto;
+    padding: 3%;
+}
+
+.categories_fiction {
+    display: inline;
+}
+
+.categories_history {
+    display: inline;
+    margin: 5px;
+}
+
+.author_name {
+    display: inline;
+}
+
+.byCls_view1 {
+    text-align: center;
+}
+
+.introduction_cnt_cls {
+    margin: 8px auto;
+}
+
+.description_child {
+    margin: 0% 5%auto;
+}
+
+.similar_reading_cnt {
+    color: White;
+    text-align: center;
+}
+
+.imgsection_pic {
+    text-align: center;
+}
+
+.view1_author_name {
+    text-align: center;
+    display: inline;
+    font-size: 1.5em;
+    font-weight: bold;
+    font-family: armataregular;
+}
+
+.findme_view {
+    font-family: armataregular;
+}
+
+.description_view1 {
+    font-family: armataregular;
+    font-weight: bold;
+    font-size: 1.1em;
+}
+
+.bookcover_cnt_view1Child {
+    display: inline;
+    font-weight: bold;
+    font-size: 1.5em;
+    font-family: armataregular;
+}
+
+.boxes_view1Child {
+    padding: 0% 3%;
+}
+
+.sr_view1child {
+    font-size: 1.2em;
+    font-family: armataregular;
+    font-weight: bold;
+}
+
+.lordofrings_view1 {
+    text-align: center;
+    font-family: armataregular;
+    font-weight: bold;
+}
+
+.name_view1_child {
+    font-family: armataregular;
+    font-size: 1em;
+}

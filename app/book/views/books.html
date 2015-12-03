@@ -1,0 +1,38 @@
+<div class="complete_cntn">
+    <!-- Search and Filter -->
+    <label for="findMeTheBest" class="findme_view"> Find me the best </label>
+    <select name="findMeTheBest" ng-model="findMeTheBest" ng-options="category for category in genreCategories" ng-change="updateLocalStorage" class="findme_view"></select>
+    <label for="booksAbout" class="findme_view"> Books about</label>
+    <select name="booksAbout" ng-model="booksAbout" ng-options="name for name in genreNames" ng-change="updateLocalStorage" class="findme_view"></select>
+    <input type="text" ng-model="searchQuery" ng-change="updateLocalStorage" class="aboutbooks_list"></input>
+    <!--Grid View-->
+    <div ng-repeat="show in retrivedData | filter: {name:searchQuery} | filter:{genre:{category:findMeTheBest, name:booksAbout}}: true | startFrom: pagination.page * pagination.perPage | limitTo: pagination.perPage">
+        <div class="clearfix" ng-if="$index % 3 == 0"></div>
+        <div class="col-md-4">
+            <div ui-sref-active="selected" class="list-group">
+                <div class="well">
+                    <img class="img-rounded row book-section" ng-src='{{show.cover}}'></img>
+                    <p class="row view1_name">{{show.name}}</p>
+                    <p class="row view1_authname">By {{show.author.name}}</p>
+                    <div class="row">
+                        <div class="col-md-6 fa fa-heart">{{show.likes}}</div>
+                        <!-- Using moment js for relative time -->
+                        <time am-time-ago="show.published" class="fa fa-clock-o"></time>
+                    </div>
+                    <button ng-click="navigateToView2(show.id)" class="btn btn-primary">Go to Details View</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Pagination -->
+<!-- <button ng-hide="pagination.page == 0" ng-click="pagination.prevPage()">Previous</button>
+<button ng-hide="pagination.page + 1 >= pagination.numPages" ng-click="pagination.nextPage()">Next</button> -->
+<ul class="pagination">
+    <li><a href="" ng-click="pagination.prevPage()">&laquo;</a></li>
+    <li ng-repeat="n in [] | range: pagination.numPages" ng-class="{active: n == pagination.page}">
+        <a href="" ng-click="pagination.toPageId(n)">{{n + 1}}</a>
+    </li>
+    <li><a href="" ng-click="pagination.nextPage()">&raquo;</a></li>
+</ul>
+</div>

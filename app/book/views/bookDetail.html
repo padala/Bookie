@@ -1,0 +1,43 @@
+<div class="child_main">
+    <h3 class="lordofrings_view1">{{selectedShow.name}}</h3>
+    <div class="byCls_view1">By
+        <p class="author_name">{{selectedShow.author.name}}</p>
+    </div>
+    <div class="description_view1">Description</div>
+    <p class="description_child">{{selectedShow.description}}</p>
+    <p class="description_view1">Categories:</p>
+    <div class="description_child">
+        <p class="categories_fiction">{{selectedShow.genre.category}} ,</p>
+        <p class="categories_history">{{selectedShow.genre.name}}</p>
+    </div>
+    <p class="introduction_cnt_cls description_view1">Introduction</p>
+    <ul ng-repeat="intro in selectedShow.introduction">
+        <li>{{intro.content}}</li>
+    </ul>
+    <div class="imgsection_pic">
+        <div class="bookcover_cnt_view1Child">BookCover</div>
+        <img class="avatar-section" ng-src='{{selectedShow.cover}}'></img>
+        <img class="avatar-section" ng-src='{{selectedShow.author.avatar}}'></img>
+        <p class="view1_author_name">Written By {{selectedShow.author.name}}</p>
+    </div>
+</div>
+<div class="child_main2 similar_reading_cnt">
+    <p class="sr_view1child">Similar Reading</p>
+    <p> If you liked this book, we would recommend you check out these emerging titles</p>
+    <div class="row similar_cntn">
+        <div ng-repeat="recommendedItem in recommendedItems track by recommendedItem.name" class="col-md-4 boxes_view1Child">
+            <div class="well name_row">
+                <img class="img-rounded row book-section" ng-src='{{recommendedItem.cover}}'></img>
+                <p class="row name_view1_child">{{recommendedItem.name}}</p>
+                <p class="row name_view1_child">By {{recommendedItem.author.name}}</p>
+                <div class="row">
+                    <div class="col-md-6 fa fa-heart">{{recommendedItem.likes}}</div>
+                    <!-- Using moment js for relative time -->
+                    <time am-time-ago="recommendedItem.published" class="fa fa-clock-o"></time>
+                </div>
+                <button ng-click="navigateToView2(recommendedItem.id)" class="btn btn-primary">Go to Details View</button>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
